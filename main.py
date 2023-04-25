@@ -10,7 +10,7 @@ from dotenv import dotenv_values
 
 
 async def main():
-    env = dotenv_values('.env')
+    env = dict(dotenv_values('.env'))
 
     redis_server = redis.StrictRedis()
     capture_time = round(time.time())
