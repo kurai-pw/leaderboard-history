@@ -7,10 +7,11 @@ import time
 
 from cmyui.mysql import AsyncSQLPool
 from dotenv import dotenv_values
+from os import getcwd
 
 
 async def main():
-    env = dict(dotenv_values('.env'))
+    env = dict(dotenv_values(getcwd() + '.env'))
 
     redis_server = redis.StrictRedis()
     capture_time = round(time.time())
